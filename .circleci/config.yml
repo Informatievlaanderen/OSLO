@@ -36,28 +36,14 @@ jobs:
             - statistics_config.json
   create-statistics:
     docker:
-      - image: ddvlanck/oslo-statistics:1.1
-    steps:
-      - checkout
-      - attach_workspace:
-          at: /tmp/workspace
-      - run:
-          name: Creating JSON file with statistics for all standards
-          command: bash $PWD/scripts/statistics.sh /tmp/workspace
-      - persist_to_workspace:
-          root: /tmp/workspace
-          paths:
-            - statistics.json
-  add-contributors:
-    docker:
       - image: cimg/node:20.15.0
     steps:
       - checkout
       - attach_workspace:
           at: /tmp/workspace
       - run:
-          name: Add contributors and terms to statistics from data.vlaanderen.be-statistics
-          command: bash $PWD/scripts/contributors-and-terms.sh /tmp/workspace
+          name: Add statistics from data.vlaanderen.be-statistics
+          command: bash $PWD/scripts/statistics.sh /tmp/workspace
       - persist_to_workspace:
           root: /tmp/workspace
           paths:
@@ -175,10 +161,6 @@ workflows:
       - create-statistics:
           requires:
             - extract-info
-      - add-contributors:
-          requires:
-            - extract-info
-            - create-statistics
       - prepare-nuxt:
           requires:
             - extract-info
