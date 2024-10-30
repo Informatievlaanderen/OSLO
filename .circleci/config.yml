@@ -165,7 +165,6 @@ workflows:
           requires:
             - extract-info
             - create-statistics
-            - add-contributors
       - push-to-nuxt:
           requires:
             - prepare-nuxt
