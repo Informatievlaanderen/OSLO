@@ -44,12 +44,12 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-slimRuimtelijkPlannen",
     "configuration": "ap-config.json",
-    "rebuild": 26
+    "rebuild": 28
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-slimRuimtelijkPlannen",
     "configuration": "voc-config.json",
-    "rebuild": 16
+    "rebuild": 18
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-voorwaarden-dienstverlening",
