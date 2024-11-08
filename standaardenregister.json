@@ -59,12 +59,12 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-incentiveringsplatform",
     "configuration": "ap-config.json",
-    "rebuild": 11
+    "rebuild": 12
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-incentiveringsplatform",
     "configuration": "voc-config.json",
-    "rebuild": 7
+    "rebuild": 8
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-verkeersmetingen",
