@@ -471,12 +471,12 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-procesEnMethode",
     "configuration": "proces-en-methode-oslo-config.json",
-    "rebuild": 1
+    "rebuild": 2
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-procesEnMethode",
     "configuration": "proces-en-methode-awv-config.json",
-    "rebuild": 1
+    "rebuild": 2
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-vlaamseUriStandaard",
