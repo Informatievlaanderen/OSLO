@@ -14,14 +14,14 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-omgevingsvergunning",
     "configuration": "ap-omgevingsvergunning-config.json",
-    "status": "kandidaat-standaard",
-    "rebuild": 15
+    "status": "erkende-standaard",
+    "rebuild": 16
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-omgevingsvergunning",
     "configuration": "voc-omgevingsvergunning-config.json",
-    "status": "kandidaat-standaard",
-    "rebuild": 8
+    "status": "erkende-standaard",
+    "rebuild": 9
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-schuldbeheer",
