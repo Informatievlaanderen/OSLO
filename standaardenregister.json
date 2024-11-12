@@ -1,5 +1,17 @@
 [
   {
+    "repository": "https://github.com/Informatievlaanderen/OSLOthema-citerra",
+    "configuration": "ap-config.json",
+    "status": "kandidaat-standaard",
+    "rebuild": 1
+  },
+  {
+    "repository": "https://github.com/Informatievlaanderen/OSLOthema-citerra",
+    "configuration": "voc-config.json",
+    "status": "kandidaat-standaard",
+    "rebuild": 1
+  },
+  {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-omgevingsvergunning",
     "configuration": "ap-omgevingsvergunning-config.json",
     "status": "kandidaat-standaard",
