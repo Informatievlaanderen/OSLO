@@ -2,13 +2,13 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-citerra",
     "configuration": "ap-config.json",
-    "status": "kandidaat-standaard",
+    "status": "standaard-in-ontwikkeling",
     "rebuild": 1
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-citerra",
     "configuration": "voc-config.json",
-    "status": "kandidaat-standaard",
+    "status": "standaard-in-ontwikkeling",
     "rebuild": 1
   },
   {
