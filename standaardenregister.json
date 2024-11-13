@@ -3,25 +3,25 @@
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-citerra",
     "configuration": "ap-config.json",
     "status": "standaard-in-ontwikkeling",
-    "rebuild": 2
+    "rebuild": 3
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-citerra",
     "configuration": "voc-config.json",
     "status": "standaard-in-ontwikkeling",
-    "rebuild": 2
+    "rebuild": 3
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-omgevingsvergunning",
     "configuration": "ap-omgevingsvergunning-config.json",
-    "status": "kandidaat-standaard",
-    "rebuild": 15
+    "status": "erkende-standaard",
+    "rebuild": 16
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-omgevingsvergunning",
     "configuration": "voc-omgevingsvergunning-config.json",
-     "status": "kandidaat-standaard",
-    "rebuild": 8
+    "status": "erkende-standaard",
+    "rebuild": 9
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-schuldbeheer",
@@ -471,12 +471,12 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-procesEnMethode",
     "configuration": "proces-en-methode-oslo-config.json",
-    "rebuild": 1
+    "rebuild": 3
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-procesEnMethode",
     "configuration": "proces-en-methode-awv-config.json",
-    "rebuild": 1
+    "rebuild": 3
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-vlaamseUriStandaard",
@@ -593,7 +593,7 @@
     "rebuild": 3,
     "configuration": "voc-cultureel-erfgoed-config.json"
   },
-   {
+  {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-cultureelErfgoed",
     "rebuild": 3,
     "configuration": "imp-cultureel-erfgoed-basisregistratie-config.json"
