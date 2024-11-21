@@ -71,12 +71,14 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-incentiveringsplatform",
     "configuration": "ap-config.json",
-    "rebuild": 13
+    "status": "erkende-standaard",
+    "rebuild": 11
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-incentiveringsplatform",
     "configuration": "voc-config.json",
-    "rebuild": 10
+    "status": "erkende-standaard",
+    "rebuild": 11
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-verkeersmetingen",
