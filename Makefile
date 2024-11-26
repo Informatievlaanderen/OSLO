@@ -14,7 +14,7 @@ fetch-content:
     cd OSLO-Standaardenregister && \
     git checkout standaarden && \
     ls && \
-    cp -R ./content/standaarden/* ../content/standaarden/
+    cp -R ./content/* ../content/
 	rm -rf OSLO-Standaardenregister
 
 # first build-base should have been run

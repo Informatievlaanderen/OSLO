@@ -8,8 +8,7 @@ REPODIR=$ROOTDIR/repositories
 ls "$ROOTDIR"
 
 ## Constructing file names for description
-while IFS= read -r line
-do
+while IFS= read -r line; do
   REPO_NAME=$(echo "$line" | cut -d ":" -f 1)
 
   cd "$REPODIR/$REPO_NAME"
@@ -19,20 +18,20 @@ do
   ## Extract information about the files containing the description for the detail page
   DESCRIPTION_NAME=$(jq -r '.beschrijving' "$CONFIG_NAME.json")
 
-  echo "$CONFIG_NAME:$DESCRIPTION_NAME" >> "$ROOTDIR/description-paths.txt"
+  echo "$CONFIG_NAME:$DESCRIPTION_NAME" >>"$ROOTDIR/description-paths.txt"
 
   #### Constructing file name ####
   SPECIAL_CHARACTERS_REMOVED="${SPEC_NAME//[:&]/}"
   MULTI_SPACE_REMOVED="${SPECIAL_CHARACTERS_REMOVED//  /}"
   SPACE_REPLACED="${MULTI_SPACE_REMOVED// /-}"
 
-  echo "$CONFIG_NAME:$SPACE_REPLACED" >> "$ROOTDIR/filenames.txt"
-done < "$ROOTDIR/tmp-register.txt"
+  echo "$CONFIG_NAME:$SPACE_REPLACED" >>"$ROOTDIR/filenames.txt"
+done <"$ROOTDIR/tmp-register.txt"
 
 ## Creating statistics config file
 echo "Creating statistics configuration file"
 touch "$ROOTDIR/statistics_config.json"
-echo "[]" > "$ROOTDIR/statistics_config.json"
+echo "[]" >"$ROOTDIR/statistics_config.json"
 
 ## Constructing statistics configuration file
 if cat "$REGISTER" | jq -e . >/dev/null 2>&1; then
@@ -44,7 +43,6 @@ if cat "$REGISTER" | jq -e . >/dev/null 2>&1; then
     REPOSITORY=$(_jq '.repository')
     THEME_NAME=$(echo "$REPOSITORY" | cut -d '/' -f 5)
     CONFIG=$(_jq '.configuration')
-    STATUS=$(_jq '.status')
 
     if [ ! -d "$REPODIR/$THEME_NAME" ]; then
       git clone "$REPOSITORY" "$REPODIR/$THEME_NAME"
@@ -53,16 +51,11 @@ if cat "$REGISTER" | jq -e . >/dev/null 2>&1; then
     cd "$REPODIR/$THEME_NAME"
     git checkout standaardenregister
 
-    NAME=$(cat "$CONFIG" | jq -r '.naam')
-    REPORT_FILE=$(cat "$CONFIG" | jq -r '.rapport')
-    PUB_DATE=$(cat "$CONFIG" | jq -r ".publicatiedatum")
+    NAME=$(cat "$CONFIG" | jq -r '.title')
+    PUB_DATE=$(cat "$CONFIG" | jq -r ".publicationDate")
+    STATUS=$(cat "$CONFIG" | jq -r ".status")
 
-
-    if [ -z "$REPORT_FILE"  ]; then
-      jq --arg REPOSITORY "$THEME_NAME" --arg NAAM "$NAME" --arg STATUS "$STATUS" --arg REPORT "$REPORT_FILE" --arg PUB_DATE "$PUB_DATE" '. += [{"name": $NAAM, "repository": $REPOSITORY, "report" : null, "status" : $STATUS, "publicationDate" : $PUB_DATE}]' "$ROOTDIR/statistics_config.json" > "$ROOTDIR/statistics_config.json.tmp" && mv "$ROOTDIR/statistics_config.json.tmp" "$ROOTDIR/statistics_config.json"
-    else
-      jq --arg REPOSITORY "$THEME_NAME" --arg NAAM "$NAME" --arg STATUS "$STATUS" --arg REPORT "$REPORT_FILE" --arg PUB_DATE "$PUB_DATE" '. += [{"name": $NAAM, "repository": $REPOSITORY, "report" : $REPORT, "status" : $STATUS, "publicationDate" : $PUB_DATE}]' "$ROOTDIR/statistics_config.json" > "$ROOTDIR/statistics_config.json.tmp" && mv "$ROOTDIR/statistics_config.json.tmp" "$ROOTDIR/statistics_config.json"
-    fi
+    jq --arg REPOSITORY "$THEME_NAME" --arg NAAM "$NAME" --arg STATUS "$STATUS" --arg PUB_DATE "$PUB_DATE" '. += [{"name": $NAAM, "repository": $REPOSITORY, "status" : $STATUS, "publicationDate" : $PUB_DATE}]' "$ROOTDIR/statistics_config.json" >"$ROOTDIR/statistics_config.json.tmp" && mv "$ROOTDIR/statistics_config.json.tmp" "$ROOTDIR/statistics_config.json"
   done
 fi
 

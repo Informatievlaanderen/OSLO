@@ -67,11 +67,14 @@ jobs:
             - statistics.json
   prepare-nuxt:
     docker:
-      - image: cimg/node:20.15.0
+      - image: informatievlaanderen/oslo-specification-generator:multilingual-dev4.0
     steps:
       - checkout
       - attach_workspace:
           at: /tmp/workspace
+      - add_ssh_keys:
+          fingerprints:
+            - "81:37:0b:68:3b:e9:c9:64:b8:f2:1f:c9:03:46:74:b0"
       - run: bash $PWD/scripts/copy-to-nuxt.sh /tmp/workspace
       - persist_to_workspace:
           root: /tmp/workspace
@@ -134,13 +137,13 @@ jobs:
           name: Push results to 'standaarden' branch of OSLO-Standaardenregister
           working_directory: /tmp/OSLO-Standaardenregister
           command: |
+            ls ./content/standaarden/
             git config user.email "oslo@oslo"
             git config user.name "Circle CI Builder"
             git add .
             git status
             git commit -m "Applying changes from commit ${CIRCLE_SHA1}" --allow-empty
             export TAG=`echo "${CIRCLE_SHA1}" | cut -c1-15`
-            git tag "${TAG}"
             git push --force origin standaarden
   build-state:
     docker:
@@ -177,6 +180,13 @@ jobs:
           fingerprints:
             - "15:51:57:05:3f:2c:a3:23:44:2a:52:5a:a6:aa:4c:c5"
       - run:
+          name: download translation memory
+          working_directory: /tmp/workspace
+          command: |
+            export CIRCLEWKD=$( eval echo "${CIRCLE_WORKING_DIRECTORY}" )
+            GENERATEDREPO=$(jq --arg bt "${CIRCLE_BRANCH}" -r '.generatedrepository + {"filepath":"nuxtmemory.tgz", "branchtag":"\($bt)"}' ${CIRCLEWKD}/config/config.json)
+            if  ${CIRCLEWKD}/scripts/downloadFileGithub.sh "${GENERATEDREPO}" nuxtmemory.tgz ${TOOLCHAIN_TOKEN} ; then tar -xzf nuxtmemory.tgz ; fi
+      - run:
           name: Checkout target repository
           working_directory: /tmp
           command: |
@@ -205,6 +215,12 @@ jobs:
             if [ -d html_pages/geregistreerde-standaard ] ; then if [ ! "$(ls -A html_pages/geregistreerde-standaard)" ] ; then echo "Directory html_pages/geregistreerde-standaard is empty" ; else cp -R html_pages/geregistreerde-standaard/* /tmp/OSLO-StandaardenregisterGenerated/public/geregistreerde-standaard/ ; fi fi
             if [ -d html_pages/standaard-in-ontwikkeling ] ; then if [ ! "$(ls -A html_pages/standaard-in-ontwikkeling)" ] ; then echo "Directory html_pages/standaard-in-ontwikkeling is empty" ; else cp -R html_pages/standaard-in-ontwikkeling/* /tmp/OSLO-StandaardenregisterGenerated/public/standaard-in-ontwikkeling/ ; fi fi
             if [ -d html_pages/zonder-status ] ; then if [ ! "$(ls -A html_pages/zonder-status)" ] ; then echo "Directory html_pages/zonder-status is empty" ; else cp -R html_pages/zonder-status/* /tmp/OSLO-StandaardenregisterGenerated/public/zonder-status/; fi fi
+      - run:
+          name: Create new autotranslate memory of the nuxt directory
+          working_directory: /tmp/workspace
+          command: |
+            ls -1
+            if [ -d nuxtmemory ] ; then tar -zcf nuxtmemory.tgz nuxtmemory ; cp nuxtmemory.tgz /tmp/OSLO-StandaardenregisterGenerated/nuxtmemory.tgz ; fi
       - run:
           name: Insert the commit
           command: |
@@ -253,3 +269,4 @@ workflows:
 #            - checkout
 #            - prepare-nuxt
 #            - push-to-nuxt
+

@@ -1,4 +1,3 @@
-# THIS IS THE CRONJOB THAT SHOULD RUN ON THE SERVER TO CHECK FOR NEW IMAGES AND UPDATE THE SERVICE IF NEEDED
 
 #!/bin/bash
 
@@ -9,7 +8,12 @@ echo "Cron job run at: $(date)"
 IMAGE_NAME="terraformtestcontainerregistry.azurecr.io/oslo2/oslo-standaardenregister-run"
 
 # Define an array of service names
-SERVICE_NAMES=("oslo_dev-standardsregister" "oslo_test-standardsregister")
+SERVICE_NAMES=("oslo_test-standardsregister" "oslo_dev-standardsregister")
+
+# Pull the latest version of the image
+docker pull $IMAGE_NAME:latest
+
+LATEST_IMAGE_SHA=$(docker inspect --format='{{index .RepoDigests 0}}' $IMAGE_NAME:latest | perl -wnE'say /sha256.*/g')
 
 # Loop over the array of service names
 for SERVICE_NAME in "${SERVICE_NAMES[@]}"; do
@@ -18,11 +22,6 @@ for SERVICE_NAME in "${SERVICE_NAMES[@]}"; do
   # Get the SHA of the current image
   CURRENT_IMAGE=$(docker service inspect --format '{{ (.Spec.TaskTemplate.ContainerSpec.Image) }}' $SERVICE_NAME)
   CURRENT_IMAGE_SHA=$(docker inspect --format='{{.Id}}' $CURRENT_IMAGE)
-
-  # Pull the latest version of the image
-  docker pull $IMAGE_NAME:latest
-
-  LATEST_IMAGE_SHA=$(docker inspect --format='{{.Id}}' $IMAGE_NAME:latest)
 
   echo $CURRENT_IMAGE_SHA
   echo $LATEST_IMAGE_SHA

@@ -1,14 +1,8 @@
 [
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-omgevingsvergunning",
-    "status": "kandidaat-standaard",
     "configuration": "ap-omgevingsvergunning-config.json",
-    "rebuild": 4
-  },
-  {
-    "repository": "https://github.com/Informatievlaanderen/OSLOthema-omgevingsvergunning",
     "status": "kandidaat-standaard",
-    "configuration": "voc-omgevingsvergunning-config.json",
-    "rebuild": 4
+    "rebuild": 10
   }
 ]
