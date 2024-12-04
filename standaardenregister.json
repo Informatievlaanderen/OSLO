@@ -80,12 +80,12 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-slimRuimtelijkPlannen",
     "configuration": "ap-config.json",
-    "rebuild": 29
+    "rebuild": 32
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-slimRuimtelijkPlannen",
     "configuration": "voc-config.json",
-    "rebuild": 19
+    "rebuild": 22
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-voorwaarden-dienstverlening",
@@ -96,7 +96,7 @@
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-incentiveringsplatform",
     "configuration": "ap-config.json",
     "status": "erkende-standaard",
-    "rebuild": 11
+    "rebuild": 12
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-incentiveringsplatform",
@@ -1124,12 +1124,12 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-lokaleEconomie",
     "configuration": "ap-lokale-economie-config.json",
-    "rebuild": 22
+    "rebuild": 23
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-lokaleEconomie",
     "configuration": "voc-lokale-economie-config.json",
-    "rebuild": 17
+    "rebuild": 18
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-overlijdensaangifte",
