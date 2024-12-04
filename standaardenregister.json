@@ -96,7 +96,7 @@
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-incentiveringsplatform",
     "configuration": "ap-config.json",
     "status": "erkende-standaard",
-    "rebuild": 11
+    "rebuild": 12
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-incentiveringsplatform",
