@@ -1,6 +1,11 @@
 [
   {
-    "repository": "https://github.com/Informatievlaanderen/OSLOthema-hulpEnDienstverleningAanGedetineerden",
+    "repository": "https://github.com/Informatievlaanderen/OSLOthema-energiehuis",
+    "configuration": "voc-config.json",
+    "rebuild": 1
+  },
+  {
+    "repository": "https://github.com/Informatievlaanderen/OSLOthema-",
     "configuration": "ap-config.json",
     "rebuild": 3
   },
