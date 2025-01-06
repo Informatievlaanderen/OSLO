@@ -2,50 +2,42 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-hulpEnDienstverleningAanGedetineerden",
     "configuration": "ap-config.json",
-    "status": "standaard-in-ontwikkeling",
     "rebuild": 3
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-hulpEnDienstverleningAanGedetineerden",
     "configuration": "voc-config.json",
-    "status": "standaard-in-ontwikkeling",
     "rebuild": 3
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-modderstromen",
     "configuration": "ap-config.json",
-    "status": "standaard-in-ontwikkeling",
     "rebuild": 8
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-modderstromen",
     "configuration": "voc-config.json",
-    "status": "standaard-in-ontwikkeling",
     "rebuild": 8
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-citerra",
     "configuration": "ap-config.json",
-    "status": "standaard-in-ontwikkeling",
     "rebuild": 13
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-citerra",
     "configuration": "voc-config.json",
-    "status": "standaard-in-ontwikkeling",
     "rebuild": 13
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-omgevingsvergunning",
     "configuration": "ap-omgevingsvergunning-config.json",
-    "status": "erkende-standaard",
-    "rebuild": 16
+    "rebuild": 17
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-omgevingsvergunning",
     "configuration": "voc-omgevingsvergunning-config.json",
-    "status": "erkende-standaard",
-    "rebuild": 9
+    "rebuild": 10
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-schuldbeheer",
@@ -80,12 +72,12 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-slimRuimtelijkPlannen",
     "configuration": "ap-config.json",
-    "rebuild": 32
+    "rebuild": 33
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-slimRuimtelijkPlannen",
     "configuration": "voc-config.json",
-    "rebuild": 22
+    "rebuild": 23
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-voorwaarden-dienstverlening",
@@ -95,13 +87,11 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-incentiveringsplatform",
     "configuration": "ap-config.json",
-    "status": "erkende-standaard",
     "rebuild": 12
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-incentiveringsplatform",
     "configuration": "voc-config.json",
-    "status": "erkende-standaard",
     "rebuild": 11
   },
   {
@@ -1082,13 +1072,11 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-slimmeStadsdistributie",
     "configuration": "ap-slimmestadsdistributie-config.json",
-    "status": "kandidaat-standaard",
     "rebuild": 6
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-slimmeStadsdistributie",
     "configuration": "voc-slimmestadsdistributie-config.json",
-    "status": "kandidaat-standaard",
     "rebuild": 6
   },
   {
@@ -1124,12 +1112,12 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-lokaleEconomie",
     "configuration": "ap-lokale-economie-config.json",
-    "rebuild": 23
+    "rebuild": 24
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-lokaleEconomie",
     "configuration": "voc-lokale-economie-config.json",
-    "rebuild": 18
+    "rebuild": 19
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-overlijdensaangifte",
@@ -1194,13 +1182,11 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-DigitaleWatermeter",
     "configuration": "ap-digitalewatermeter-config.json",
-    "status": "kandidaat-standaard",
     "rebuild": 12
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-DigitaleWatermeter",
     "configuration": "voc-digitalewatermeter-config.json",
-    "status": "kandidaat-standaard",
     "rebuild": 13
   },
   {
