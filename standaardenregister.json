@@ -1097,12 +1097,12 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-wegenEnWegmarkeringen",
     "configuration": "impl-config.json",
-    "rebuild": 10
+    "rebuild": 12
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-wegenEnWegmarkeringen",
     "configuration": "voc-config.json",
-    "rebuild": 11
+    "rebuild": 12
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-slimmeRaadpleegOmgeving",
@@ -1127,17 +1127,17 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-overlijdensaangifte",
     "configuration": "ap-overlijdensaangifte-config.json",
-    "rebuild": 11
+    "rebuild": 13
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-overlijdensaangifte",
     "configuration": "voc-overlijdensaangifte-config.json",
-    "rebuild": 12
+    "rebuild": 13
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-overlijdensaangifte",
     "configuration": "voc-gezondheidstoestand-config.json",
-    "rebuild": 8
+    "rebuild": 13
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-kindFiche",
@@ -1167,7 +1167,7 @@
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-Leercredential",
     "configuration": "ap-leerinschrijfcredential-config.json",
-    "rebuild": 13
+    "rebuild": 14
   },
   {
     "repository": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit",
